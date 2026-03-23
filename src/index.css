@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #1A0F0B;
+  --color-background-alt: #2A1711;
+
+  --color-foreground: #F5F2EE;
+  --color-muted-foreground: #B7ADA7;
+
+  --color-card: #F3F0EC;
+  --color-card-foreground: #2A1E18;
+
+  --color-primary: #C25A0A;
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: #E07A2F;
+  --color-secondary-foreground: #1A0F0B;
+
+  --color-border: #3A2A24;
+  --color-input: #3A2A24;
+
+  --color-accent: #D46A1A;
+  --color-ring: #C25A0A;
+
+  --radius: 0.75rem;
+}
