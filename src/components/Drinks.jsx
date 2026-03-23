@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const bebidas = [
   {
@@ -23,6 +24,18 @@ const bebidas = [
 ];
 
 export default function Drinks() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const handleChange = (event) => setIsMobile(event.matches);
+
+    setIsMobile(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
   return (
     <section className="py-28 bg-background">
 
@@ -51,7 +64,7 @@ export default function Drinks() {
           {bebidas.map((item, i) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: isMobile ? 0 : 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               className="group bg-background-alt rounded-3xl overflow-hidden border border-border hover:border-accent/70 transition-all duration-500 hover:-translate-y-2"

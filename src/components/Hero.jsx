@@ -3,7 +3,7 @@ import { ChevronDown, Phone } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-dvh md:min-h-screen flex items-center justify-center overflow-hidden">
 
       {/* Split Background */}
       <div className="absolute inset-0 hidden md:flex">
@@ -20,7 +20,7 @@ export default function Hero() {
       </div>
 
       {/* Mobile Background */}
-      <div className="absolute inset-0 md:hidden">
+      <div className="absolute  inset-0 md:hidden">
         <img
           src="/images/desayuno-tipico.jpg"
           alt="Desayuno costarricense"
@@ -29,14 +29,14 @@ export default function Hero() {
         <div className="absolute inset-0 bg-background/80" />
       </div>
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 w-full">
+      <div className="relative  z-10 max-w-6xl mx-auto px-6 py-20 w-full">
         <div className="grid md:grid-cols-2 gap-12 items-center">
 
           {/* Content */}
           <div className="text-center md:text-left">
 
             {/* Top label */}
-            <div className="inline-flex items-center gap-3 mb-8">
+            <div className="inline-flex items-center gap-3 mb-4">
               <span className="w-12 h-px bg-primary" />
               <span className="text-primary text-sm font-medium tracking-[0.3em] uppercase">
                 Costa Rica
@@ -93,7 +93,7 @@ export default function Hero() {
             </motion.div>
 
             {/* Badge */}
-            <div className="mt-12 inline-flex items-center gap-4 bg-foreground/70 px-6 py-4 rounded-2xl border border-border/80 shadow-lg shadow-black/20">
+            <div className="mt-4 inline-flex items-center gap-4 bg-foreground/70 px-6 py-4 rounded-2xl border border-border/80 shadow-lg shadow-black/20">
               <div className="w-3 h-3 bg-secondary rounded-full animate-pulse" />
               <span className="text-secondary-foreground text-sm font-medium">
                 Servicio a domicilio en La Fortuna
@@ -109,7 +109,7 @@ export default function Hero() {
 
       {/* Scroll icon */}
       <motion.div
-        className="absolute bottom-8 left-1/2 md:left-1/4 -translate-x-1/2 text-muted-foreground"
+        className="absolute bottom-6 left-1/2 md:left-1/4 -translate-x-1/2 text-muted-foreground"
         animate={{ y: [0, 8, 0], opacity: [0.65, 1, 0.65] }}
         transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
       >

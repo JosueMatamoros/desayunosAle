@@ -1,5 +1,6 @@
 import { Coffee } from "lucide-react";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const desayunos = [
   {
@@ -29,6 +30,18 @@ const desayunos = [
 ];
 
 export default function Menu() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+    const handleChange = (event) => setIsMobile(event.matches);
+
+    setIsMobile(mediaQuery.matches);
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
   return (
     <section id="menu" className="py-28 bg-foreground">
 
@@ -59,7 +72,7 @@ export default function Menu() {
           {desayunos.map((item, i) => (
             <motion.article
               key={item.id}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: isMobile ? 0 : 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
               className="group bg-card rounded-3xl overflow-hidden border border-border/25 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 flex flex-col"

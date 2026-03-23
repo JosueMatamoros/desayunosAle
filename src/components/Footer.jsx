@@ -47,7 +47,7 @@ export default function Footer() {
 
         {/* Divider */}
         <div className="mt-10 pt-6 border-t border-border text-center text-sm text-muted-foreground">
-          © 2026 Desayunos Pura Vida. Todos los derechos reservados.
+          © 2026 Desayunos Pura Vida.
         </div>
 
       </div>
